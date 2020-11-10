@@ -17,12 +17,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                
                         <?php  foreach($noticia as $noticias){ ?>
                                 <tr>
                                     <td><?=$noticias['id']?></td>
                                     <td><?=$noticias['titulo']?></td>
-                                    <td><?=$noticias['data'] ?></td>
+                                    <td><?=date("d/m/Y", strtotime($noticias['data']));?></td>
                                     <td><?=$noticias['resumo'] ?></td>
                                     <td><?=$noticias['imagem']?></td>
                                     <td><?=$noticias['conteudo']?></td>
