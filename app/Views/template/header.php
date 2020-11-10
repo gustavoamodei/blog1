@@ -36,7 +36,10 @@
                   
               </li>
               <span style=" margin-left: 600px"><?php echo isset(session()->nome_session)? 'olá: '.session()->nome_session:"" ?>
-              <a style=" margin-left: 20px" href=<?=site_url("deslogar")?>>Logout</a>
+              <?php if(isset(session()->nome_session)){?>
+                <a style=" margin-left: 20px" href=<?=site_url("deslogar")?>>Logout</a>
+              <?php } ?>
+              
               <span>
              
           </div> 

@@ -16,7 +16,7 @@ class Filters extends BaseConfig
 	// Always applied before every request
 	public $globals = [
 		'before' => [
-			'login'=>['except'=>['home','home/*']]// 'csrf',
+			'login'=>['except'=>['home','home/*','cadastro_usuario','salvar_user','User_controller/getCidades']],// 'csrf',
 		],
 		'after'  => [
 			'toolbar',

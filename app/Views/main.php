@@ -3,6 +3,7 @@ tela inicial
 $session = session();
 echo $session->nome_user_session ;
 ?>
+
 <div class="container">
     <div class="row align-self-center d-flex justify-content-center">
         <div class="col-10 col-md-4">

@@ -66,8 +66,11 @@ class User_controller extends BaseController
                     'senha'  => md5($this->request->getVar('senha')),
                     
                     ]);
+                     if(isset(session()->nome_session)){
+                        $this->index();
+                     }
+                     echo view('user_cadastrado');
                     
-                    $this->index();
                  	
             }
 
