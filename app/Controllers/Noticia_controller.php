@@ -6,7 +6,7 @@ class Noticia_controller extends BaseController
     public function index(){
         $model= new Noticia_Model();
         
-        $user_id=session()->user_id_session; 
+        $user_id=session()->id_session;; 
         $data =['noticia' =>  $model->get_noticias($user_id)];
         echo view('template/header');
 		echo view('listar_noticias',$data);

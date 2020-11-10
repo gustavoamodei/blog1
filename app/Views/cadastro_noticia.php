@@ -44,7 +44,7 @@
                     </textarea>
                     </div>
                     <input type="hidden"  name="id" value="<?=isset($id)? $id : set_value('id')?>" >
-                    <input type="hidden"  name="user_id" value="<?= session()->user_id_session; ?>" >          
+                    <input type="hidden"  name="user_id" value="<?= session()->id_session; ?>" >          
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary  btn-block" id="btn"><?= isset($id)? "Atualizar":"Cadastrar" ?></button>
                     </div>  
