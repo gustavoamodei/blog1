@@ -34,6 +34,8 @@ class User_controller extends BaseController
         helper(['form', 'url']);
         //$validation = \Config\Services::validation();
         $model =  new User_Model();
+        //validação a regra validacpf criei na pasta system/validation com nome cpf 
+        // foi carregada em pasta config /validation.php
         $check= $this->validate([
             'nome' => 'min_length[5]|max_length[100]',
             'cpf' => 'min_length[11]|max_length[11]|is_unique[user.cpf,id,{id}]|validaCPF',
@@ -54,7 +56,7 @@ class User_controller extends BaseController
                 echo view('template/footer');
                 
             }else{
-                       
+                //save se o id vier vazio ele vai salvar se o id vier preenchido ele vai autualizar       
                 $model->save([
                     'id' => $this->request->getVar('id'),
                     'nome' => $this->request->getVar('nome'),
@@ -128,31 +130,6 @@ class User_controller extends BaseController
         
         //echo $r[0]['uf'];
        
-    }
-
-
-   
-    
-
-    public function s(){
-        $session = session();
-        $data =[
-            'id_session'=>5,
-            'nome_session'=>"bia",
-        ];
-        
-        $session->set($data);
-        
-        echo  session()->nome_session;
-        
-        if(! isset(session()->nome_session) === false){
-            echo "cai aqui";
-        }
-        
-    }
-    public function d(){
-        session()->destroy();
-        session()->nome_session;
     }
 
 }
