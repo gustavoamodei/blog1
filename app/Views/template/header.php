@@ -23,18 +23,19 @@
           <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
              
-          
+            <?php if( isset(session()->nome_session)){?>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span style ="color:white;">Cadastro/Simulação</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href=<?=site_url('listar_users');?>>Listar Usuários</a>
-                  <a class="dropdown-item" href=<?=site_url('listar_noticias');?>>Listar Notícias</a>
-                  <a class="dropdown-item" href=<?=site_url('cadastro_usuario');?>>Cadastro de Usuários</a>
-                  <a class="dropdown-item" href=<?=site_url("cadastro_noticia")?>>Cadastro de notícias</a>
-                  
+                    <a class="dropdown-item" href=<?=site_url('listar_users');?>>Listar Usuários</a>
+                    <a class="dropdown-item" href=<?=site_url('listar_noticias');?>>Listar Notícias</a>
+                    <a class="dropdown-item" href=<?=site_url('cadastro_usuario');?>>Cadastro de Usuários</a>
+                    <a class="dropdown-item" href=<?=site_url("cadastro_noticia")?>>Cadastro de notícias</a>
+                </div>
               </li>
+              <?php } ?> 
               <span style=" margin-left: 600px"><?php echo isset(session()->nome_session)? 'olá: '.session()->nome_session:"" ?>
               <?php if(isset(session()->nome_session)){?>
                 <a style=" margin-left: 20px" href=<?=site_url("deslogar")?>>Logout</a>
