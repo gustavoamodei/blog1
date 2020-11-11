@@ -69,7 +69,8 @@ class User_controller extends BaseController
                     
                     ]);
                      if(isset(session()->nome_session)){
-                        $this->index();
+                        //$this->index();
+                        return $this->response->redirect(site_url('listar_users'));
                      }
                      echo view('user_cadastrado');
                     
